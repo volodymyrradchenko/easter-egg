@@ -9,11 +9,9 @@ module.exports = function(environment) {
 
     firebase: {
       apiKey: process.env.FIREBASE_API_KEY,
-      authDomain: process.env.FIREBASE_DOMAIN,
-      databaseURL: process.env.FIREBASE_URL,
-      projectId: process.env.FIREBASE_ID,
-      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-      messagingSenderId: process.env.FIREBASE_SENDER_ID
+      authDomain: "easter-egg-419e4.firebaseapp.com",
+      databaseURL: "https://easter-egg-419e4.firebaseio.com",
+      storageBucket: "easter-egg-419e4.appspot.com",
     },
 
     EmberENV: {

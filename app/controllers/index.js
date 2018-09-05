@@ -10,13 +10,15 @@ export default Controller.extend({
 	isDisabled: not('isValid'),
 
 	actions: {
-		sendMessage() {
+		saveMessage() {
 			const text = this.get('textMessage');
-			const newMessage = this.store.createRecord('message', { text: text });
-			newMessage.save();
-
-			this.set('responseMessage', `Thank you for your message ${this.get('textMessage')}`);
-			this.set('textMessage', '');
+			
+			const newMessage = this.store.createRecord('message', { text });
+			
+			newMessage.save().then((response) => {
+				this.set('responseMessage', `Thank you for your message ${response.get('id')}`);
+				this.set('textMessage', '');
+		});
 		}
 	}
 });

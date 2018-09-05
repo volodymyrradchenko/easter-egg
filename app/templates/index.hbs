@@ -1,21 +1,21 @@
 <div class="mx-auto shadow-md bg-grey-light border rounded relative text-center text-xl h-auto w-full">
   <h1 class="font-bold">Congratulations!</h1>
-  <p>You've found the Easter Egg</p>
-  <p>Send me a message if you're ready to hire someone really cool</p>
+  <p>You've found the Easter Egg.</p>
+  <p>Send me a message if you're hiring.</p>
   <form class="rounded px-8 pt-6 pb-8 mb-4">
     <div class="flex sm:flex-col md:flex-col lg:flex-col xl:flex-row justify-around w-full">
-      {{input value=textMessage class="sm:w-full md:w-full lg:w-full xl:w-2/5 leading-loose shadow border rounded text-grey-darker focus:outline-none focus:shadow-outline" placeholder="Your message, please." autofocus="autofocus"}}
-      <div class="sm:w-full md:w-full lg:w-full xl:w-2/5 leading-loose shadow bg-blue hover:bg-blue-dark text-white font-bold rounded focus:outline-none focus:shadow-outline">
-      <button disabled={{isDisabled}} {{action 'sendMessage'}}>
+      {{input type="text" value=textMessage class="px-1 py-1 sm:w-full md:w-full lg:w-full xl:w-2/5 leading-loose shadow border rounded text-grey-darker focus:outline-none focus:shadow-outline" placeholder="Your message, please." autofocus="autofocus"}}
+      <div class="px-1 py-1 sm:w-full md:w-full lg:w-full xl:w-2/5 leading-loose shadow bg-blue hover:bg-blue-dark text-white font-bold rounded focus:outline-none focus:shadow-outline">
+      <button disabled={{isDisabled}} {{action 'saveMessage'}}>
         Send
       </button>
       
     </div>
     </div>
   </form>
+  {{#if responseMessage}}
+    <div class="bg-blue-lightest border border-blue-light text-blue-dark px-4 py-3 m-6 rounded relative" role="alert">
+      {{responseMessage}}
+    </div>
+  {{/if}}
 </div>
-{{#if responseMessage}}
-  <div>
-    {{responseMessage}}
-  </div>
-{{/if}}
