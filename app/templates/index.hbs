@@ -3,9 +3,9 @@
   <p>You've found the Easter Egg.</p>
   <p>Send me a message if you're hiring.</p>
   <form class="rounded px-8 pt-6 pb-8 mb-4">
-    <div class="flex sm:flex-col md:flex-col lg:flex-col xl:flex-row justify-around w-full">
-      {{input type="text" value=textMessage class="px-1 py-1 sm:w-full md:w-full lg:w-full xl:w-2/5 leading-loose shadow border rounded text-grey-darker focus:outline-none focus:shadow-outline" placeholder="Your message, please." autofocus="autofocus"}}
-      <div class="px-1 py-1 sm:w-full md:w-full lg:w-full xl:w-2/5 leading-loose shadow bg-blue hover:bg-blue-dark text-white font-bold rounded focus:outline-none focus:shadow-outline">
+    <div class="flex flex-col xl:flex-row justify-around w-full">
+      {{input type="text" value=textMessage class="px-1 py-1 w-full xl:w-2/5 leading-loose shadow border rounded text-grey-darker focus:outline-none focus:shadow-outline" placeholder="Your message, please." autofocus="autofocus"}}
+      <div class="px-1 py-1 w-full xl:w-2/5 leading-loose shadow bg-blue hover:bg-blue-dark text-white font-bold rounded focus:outline-none focus:shadow-outline">
       <button disabled={{isDisabled}} {{action 'saveMessage'}}>
         Send
       </button>
